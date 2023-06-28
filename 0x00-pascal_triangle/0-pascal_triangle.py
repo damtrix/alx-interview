@@ -8,6 +8,9 @@ def factorial(n):
 
 def pascal_triangle(n):
     
+    if n <= 0:
+        return []
+    
     triangle = [0] * n
     for i in range(n):
         new_array = []
