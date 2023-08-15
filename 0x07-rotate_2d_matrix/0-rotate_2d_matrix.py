@@ -1,59 +1,13 @@
 #!/usr/bin/python3
-"""_summary_
-"""
-
-
-def transpose_matrix(matrix, n):
-    """_summary_
-
-    Args:
-                    matrix (_type_): _description_
-    """
-    for i in range(n):
-        for j in range(i, n):
-            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-
-
-def reverse_matrix(matrix):
-    """_summary_
-
-    Args:
-                    matrix (_type_): _description_
-    """
-    for row in matrix:
-        row.reverse()
-
+'''2D matrix'''
 
 def rotate_2d_matrix(matrix):
-    """_summary_
+    '''rotates a 2d matrix 90° clockwise
+    Returns: Nothing'''
+    new_matrix = matrix.copy()
 
-    Args:
-                    matrix (_type_): _description_
-    """
-    n = len(matrix)
-    # print(n)
-
-    """sample matrix
-    1 2 3
-    4 5 6
-    7 8 9
-    """
-
-    # transpose matrix
-    """
-    1 4 7
-    2 5 8
-    3 6 9
-    """
-
-    transpose_matrix(matrix, n)
-
-    # reverse matrix
-    """
-    7 4 1
-    8 5 2
-    9 6 3
-    """
-    reverse_matrix(matrix)
-
-    return matrix
+    for i in range(len(new_matrix)):
+        a = []
+        for j in range(len(new_matrix), 0, -1):
+            a.append(new_matrix[j - 1][i])
+        matrix[i] = a
